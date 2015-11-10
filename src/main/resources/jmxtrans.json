@@ -1,0 +1,18 @@
+{
+  "queries": [
+    {
+      "objectName": "com.sulake:type=TestStatistics",
+      "resultAlias": "TestStats",
+      "attribute": "TestCount"
+    }
+  ],
+  "outputWriters": [
+    {
+      "@class": "org.jmxtrans.embedded.output.ConsoleWriter",
+      "settings": {
+        "namePrefix": "test.",
+        "enabled": "true"
+      }
+    }
+  ]
+}

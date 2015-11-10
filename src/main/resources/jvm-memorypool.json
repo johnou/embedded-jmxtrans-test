@@ -1,0 +1,17 @@
+{
+  "queries": [
+    {
+      "objectName": "java.lang:type=MemoryPool,name=*",
+      "resultAlias": "jvm.memorypool.%name%",
+      "attributes": [
+        {
+          "name": "Usage",
+          "keys": [
+            "committed",
+            "used"
+          ]
+        }
+      ]
+    }
+  ]
+}

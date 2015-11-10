@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jmxtrans="http://www.jmxtrans.org/schema/embedded"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.jmxtrans.org/schema/embedded
+            http://www.jmxtrans.org/schema/embedded/jmxtrans.xsd"
+       default-lazy-init="false">
+
+    <context:component-scan base-package="com.sulake.test"/>
+
+    <context:mbean-export/>
+
+    <jmxtrans:jmxtrans>
+        <jmxtrans:configuration>classpath:jmxtrans.json</jmxtrans:configuration>
+        <jmxtrans:configuration>classpath:jvm-memorypool.json</jmxtrans:configuration>
+        <jmxtrans:configuration>classpath:org/jmxtrans/embedded/config/jmxtrans-internals.json</jmxtrans:configuration>
+        <jmxtrans:configuration>classpath:org/jmxtrans/embedded/config/jvm-sun-hotspot.json</jmxtrans:configuration>
+    </jmxtrans:jmxtrans>
+
+</beans>
